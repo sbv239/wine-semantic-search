@@ -1,0 +1,9 @@
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+pydantic
+jupyter
+matplotlib
