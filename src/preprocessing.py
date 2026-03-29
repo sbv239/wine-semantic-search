@@ -10,8 +10,9 @@ Steps:
     3. Drop duplicate descriptions (keep first occurrence)
     4. Strip HTML tags from descriptions
     5. Drop the Brand column (not used in search or metadata)
-    6. Reset index
-    7. Save to processed/
+    6. Fill nulls in metadata columns with "Unknown"
+    7. Reset index
+    8. Save to processed/
 """
 
 import re
@@ -46,10 +47,15 @@ def preprocess(input_path: str, output_path: str) -> pd.DataFrame:
     # 5. Drop Brand column
     df = df.drop(columns=["Brand"])
 
-    # 6. Reset index
+    # 6. Fill nulls in metadata columns with "Unknown"
+    metadata_cols = [c for c in df.columns if c not in ("description", "score", "url")]
+    df[metadata_cols] = df[metadata_cols].fillna("Unknown")
+    print(f"Filled nulls in metadata columns with 'Unknown'")
+
+    # 7. Reset index
     df = df.reset_index(drop=True)
 
-    # 7. Save
+    # 8. Save
     df.to_csv(output_path, index=False)
     print(f"Saved: {output_path}")
 
