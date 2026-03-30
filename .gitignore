@@ -6,4 +6,4 @@ __pycache__/
 *.npy
 *.bin
 .DS_Store
-.ipynb_checkpoints/
+CONTEXT.md
