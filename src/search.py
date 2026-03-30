@@ -79,7 +79,8 @@ class WineSearcher:
         assert len(self._df) == self._index.ntotal, (
             f"Mismatch: CSV has {len(self._df)} rows but FAISS has {self._index.ntotal} vectors."
         )
-
+    def __len__(self) -> int:
+        return self._index.ntotal
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
