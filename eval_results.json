@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-03-30T11:53:51",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "n_queries": 200,
+    "top_k": 5,
+    "seed": 42,
+    "region_hit_rate": 0.375,
+    "grape_recall": 0.3242,
+    "percentiles": {
+      "region": {
+        "p25": 0.0,
+        "p50": 0.2,
+        "p75": 0.8
+      },
+      "grape": {
+        "p25": 0.0,
+        "p50": 0.2,
+        "p75": 0.6
+      }
+    }
+  }
+]
