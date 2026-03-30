@@ -19,5 +19,49 @@
         "p75": 0.6
       }
     }
+  },
+  {
+    "timestamp": "2026-03-30T21:42:46",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_type": "base",
+    "n_queries": 200,
+    "top_k": 5,
+    "seed": 42,
+    "region_hit_rate": 0.375,
+    "grape_recall": 0.3242,
+    "percentiles": {
+      "region": {
+        "p25": 0.0,
+        "p50": 0.2,
+        "p75": 0.8
+      },
+      "grape": {
+        "p25": 0.0,
+        "p50": 0.2,
+        "p75": 0.6
+      }
+    }
+  },
+  {
+    "timestamp": "2026-03-30T21:43:08",
+    "model": "models/finetuned_sentence_transformers_all_MiniLM_L6_v2_20260330T194333/final",
+    "model_type": "finetuned",
+    "n_queries": 200,
+    "top_k": 5,
+    "seed": 42,
+    "region_hit_rate": 0.43,
+    "grape_recall": 0.3798,
+    "percentiles": {
+      "region": {
+        "p25": 0.0,
+        "p50": 0.4,
+        "p75": 0.8
+      },
+      "grape": {
+        "p25": 0.0,
+        "p50": 0.2,
+        "p75": 0.8
+      }
+    }
   }
 ]
