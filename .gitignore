@@ -7,3 +7,4 @@ __pycache__/
 *.bin
 .DS_Store
 CONTEXT.md
+wine-search-key.pem
