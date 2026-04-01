@@ -78,36 +78,38 @@ The base model was fine-tuned on domain-specific pairs using `MultipleNegativesR
 
 ## Example Results
 
+All results produced by the fine-tuned model.
+
 **Query:** `"elegant red with dried cherry and mineral finish"`
 
 ```json
 [
   {
-    "id": 2045,
-    "title": "Celler Masroig, Etnic, Priorat, Catalonia, Spain 2022",
-    "score": 89,
-    "region": "Catalonia",
-    "grapes": "Grenache / Garnacha, Syrah",
-    "description": "Brilliant red cherry fruit with subtle spice and a trace of graphite. Poised and flavourful, finishing with grippy tannin and an elegant sense of control.",
-    "similarity": 0.7247
+    "id": 2486,
+    "title": "Vina Prelac, Refošk, Momjan, Istria, Coastal, Croatia, 2023",
+    "score": 90,
+    "region": "Istria",
+    "grapes": "Refosco 100%",
+    "description": "Youthful red plum, rosehip and a lifted herbaceous note. Dark cherry and blackberry depth with subtle leathery spice. Firm structure with balance, clean and juicy, finishing a little astringent yet appealing.",
+    "similarity": 0.9328
   },
   {
-    "id": 261,
-    "title": "Château Montlabert, Croix de Montlabert, St-Émilion 2023",
-    "score": 89,
-    "region": "Bordeaux",
-    "grapes": "Cabernet Sauvignon, Merlot",
-    "description": "Lightly textured and bodied, this has a nice purity of creamy red cherry fruit with touches of flint and wet stone on the mineral finish.",
-    "similarity": 0.7218
+    "id": 7360,
+    "title": "Clementi, Valpolicella Classico, Veneto, Italy, 2024",
+    "score": 92,
+    "region": "Veneto",
+    "grapes": "Corvina 35%, Corvinone 30%, Rondinella 30%",
+    "description": "Light ruby with perfumed red cherry, cedar, cigar and smoked leather over subtle tertiary tones. Juicy with chalky tannins, woodsy spice and an elegant, medium-length finish.",
+    "similarity": 0.9283
   },
   {
-    "id": 2074,
-    "title": "Clos Alkio, Caminito a Motel, Priorat, Catalonia, Spain 2021",
-    "score": 88,
-    "region": "Catalonia",
-    "grapes": "35% Cabernet Sauvignon, 35% Grenache, 30% Carignan",
-    "description": "Cherry and redcurrant purity framed by subtle earthy nuance and spice. A poised fruit presence carries through the finish. Elegant and complex.",
-    "similarity": 0.7178
+    "id": 7323,
+    "title": "Serego Alighieri, Montepiazzo, Valpolicella Classico",
+    "score": 92,
+    "region": "Veneto",
+    "grapes": "Corvina 70%, Rondinella 20%, Molinara 10%",
+    "description": "Cola, root and balsamic notes over oxidative tones, with dusty red and black cherry fruit. Ripe and rounded yet slightly tannic and drying on the finish.",
+    "similarity": 0.9276
   }
 ]
 ```
@@ -117,13 +119,65 @@ The base model was fine-tuned on domain-specific pairs using `MultipleNegativesR
 ```json
 [
   {
-    "id": 5821,
-    "title": "Jules Taylor, Chardonnay, Gimblett Gravels, Hawke's Bay 2023",
-    "score": 92,
-    "region": "Hawke's Bay",
-    "grapes": "100% Chardonnay",
-    "description": "Creamy and full, with buttered brioche, grilled pineapple and vanilla custard. Toasty oak well-integrated, long finish.",
-    "similarity": 0.7891
+    "id": 7239,
+    "title": "Greywacke, Chardonnay, Marlborough, New Zealand, 2014",
+    "score": 89,
+    "region": "Marlborough",
+    "grapes": "Chardonnay 100%",
+    "description": "An elegant Chardonnay beaming with tropical fruit, pineapple, ginger and crème brûlée sprinkled with toasted hazelnuts and finishing with a warm lick of alcohol.",
+    "similarity": 0.9669
+  },
+  {
+    "id": 6630,
+    "title": "Tapiz, Reserve Chardonnay, Uco Valley, San Pablo, 2022",
+    "score": 90,
+    "region": "Mendoza",
+    "grapes": "Chardonnay 100%",
+    "description": "Toasty, creamy Chardonnay with a dense fruit core and lemon ice cream lift. Full-bodied, rich and generous, warm and firm in structure, then with freshness tapering on a long, creamy finish.",
+    "similarity": 0.9629
+  },
+  {
+    "id": 6635,
+    "title": "El Enemigo, Chardonnay, Uco Valley, Mendoza, Argentina, 2023",
+    "score": 86,
+    "region": "Mendoza",
+    "grapes": "Chardonnay 100%",
+    "description": "Smoky, bold Chardonnay with ripe pineapple, citrus and sweet lemon notes. Creamy peach richness, flinty lift and plenty of intensity through the finish.",
+    "similarity": 0.9619
+  }
+]
+```
+
+**Query:** `"fresh sparkling wine with brioche and green apple"`
+
+```json
+[
+  {
+    "id": 6931,
+    "title": "Camporè, Metodo Classico Nerello Mascalese Brut, Etna, 2021",
+    "score": 91,
+    "region": "Sicily",
+    "grapes": "Nerello Mascalese 100%",
+    "description": "Creamy brioche, lemon and floral notes introduce a bright and fresh sparkling wine with good intensity of lemon peel and white peach. It spends four years on its lees, helping to round out the edges and gain complexity.",
+    "similarity": 0.9386
+  },
+  {
+    "id": 4406,
+    "title": "Huré Frères, Insouciance Rosé Brut, Champagne, France",
+    "score": 93,
+    "region": "Champagne",
+    "grapes": "Chardonnay 25%, Pinot Meunier 35%, Pinot Noir 40%",
+    "description": "Fresh citrus and red fruits, with lively red plum and berry notes. Light, delicate palate with brioche and creamy texture; broad yet crisp, toasty finish.",
+    "similarity": 0.9301
+  },
+  {
+    "id": 7665,
+    "title": "Segura Viudas, Vintage Brut, Cava, Penedès, Spain",
+    "score": 88,
+    "region": "Penedès",
+    "grapes": "Macabeo 39%, Parellada 21%, Xarel-lo 34%",
+    "description": "Juicy white fruit and green citrus zest aromas with hints of brioche and sweet peach. Green fruits on the palate and touches of apple peel bitterness, with good weight thanks to nine months of ageing on lees.",
+    "similarity": 0.9294
   }
 ]
 ```
@@ -205,12 +259,12 @@ This runs preprocessing → embedding → FAISS index (~2 min on CPU).
 uvicorn src.api:app --reload
 
 # Fine-tuned model
-WINE_MODEL=models/finetuned_.../final uvicorn src.api:app --reload
+WINE_MODEL=models/finetuned_sentence_transformers_all_MiniLM_L6_v2_20260330T194333/final uvicorn src.api:app --reload
 ```
 
 **5. Run evaluation**
 ```bash
-python -m src.evaluation --model models/finetuned_.../final
+python -m src.evaluation --model models/finetuned_sentence_transformers_all_MiniLM_L6_v2_20260330T194333/final
 ```
 
 ---
