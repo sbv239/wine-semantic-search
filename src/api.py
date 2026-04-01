@@ -20,7 +20,7 @@ import os
 import time
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel, Field
 
 import config
@@ -145,19 +145,21 @@ def search(req: SearchRequest):
 def get_wine(wine_id: int):
     """Retrieve a single wine by its index ID."""
     searcher = get_searcher()
+    logger.info("GET /wine/%d", wine_id)
     try:
         return searcher.get_wine(wine_id)
     except IndexError:
         raise HTTPException(status_code=404, detail=f"Wine id={wine_id} not found")
-
-
+    
+    
 @app.get("/similar/{wine_id}", response_model=list[WineResponse], tags=["search"])
-def similar(wine_id: int, top_k: int = config.TOP_K):
-    """Find wines similar to the given wine ID."""
-    if not 1 <= top_k <= 50:
-        raise HTTPException(status_code=422, detail="top_k must be between 1 and 50")
+def similar(
+    wine_id: int,
+    top_k: int = Query(default=config.TOP_K, ge=1, le=50),
+    ):
     searcher = get_searcher()
+    logger.info("GET /similar/%d  top_k=%d", wine_id, top_k)
     try:
         return searcher.similar(wine_id, top_k=top_k)
     except IndexError:
-        raise HTTPException(status_code=404, detail=f"Wine id={wine_id} not found")
+        raise HTTPException(status_code=404, detail=f"Wine id={wine_id} not found")    

@@ -19,8 +19,6 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
 import config
 from src.index import load_index
 from sentence_transformers import SentenceTransformer
