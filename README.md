@@ -15,6 +15,15 @@ This system encodes tasting notes as vectors in semantic space. Similar flavour 
 
 ---
 
+## Use Cases
+
+- Wine recommendation engines (Vivino-style apps)
+- Retail search (semantic instead of keyword filters)
+- Sommelier tools for wine pairing
+- Market analysis of flavour trends
+
+---
+
 ## Architecture
 
 ```
@@ -74,6 +83,7 @@ The base model was fine-tuned on domain-specific pairs using `MultipleNegativesR
 | Fine-tuned (epoch 4/5) | **0.430** | **0.380** |
 | Δ | **+14.7%** | **+17.3%** |
 
+Improves real-world retrieval quality, not just cosine similarity
 ---
 
 ## Example Results
@@ -258,8 +268,8 @@ This runs preprocessing → embedding → FAISS index (~2 min on CPU).
 # Base model
 uvicorn src.api:app --reload
 
-# Fine-tuned model
-WINE_MODEL=models/finetuned_sentence_transformers_all_MiniLM_L6_v2_20260330T194333/final uvicorn src.api:app --reload
+# Fine-tuned model (replace with your actual path from models/)
+WINE_MODEL=models/finetuned_<timestamp>/final uvicorn src.api:app --reload
 ```
 
 **5. Run evaluation**
@@ -291,9 +301,13 @@ python scripts/compare_models.py
 
 Deployed on AWS EC2 (t3.small, Amazon Linux 2023). Served with `uvicorn` inside a `screen` session.
 
+Note: EC2 public IP changes on every instance restart. Update the IP in any
+client configs after stopping and restarting the instance.
+
 ```bash
 screen -S wine-api
 source venv/bin/activate
 uvicorn src.api:app --host 0.0.0.0 --port 8000
 # Ctrl+A, D to detach
 ```
+
